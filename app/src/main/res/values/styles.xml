@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@android:color/holo_blue_light</item>
+        <item name="colorPrimaryDark">@android:color/holo_blue_dark</item>
+        <item name="colorAccent">@android:color/holo_orange_light</item>
+    </style>
+
+    <style name="AppTheme.Main">
+        <item name="android:windowExitTransition">@transition/main_exit</item>
+        <item name="android:windowReenterTransition">@transition/main_reenter</item>
+    </style>
+
+    <style name="AppTheme.Detail">
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowAllowEnterTransitionOverlap">false</item>
+        <item name="android:windowEnterTransition">@transition/detail_enter</item>
+    </style>
+
+    <style name="AppTheme.Sharing">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@color/translucent_black</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowSharedElementEnterTransition">
+            @transition/sharing_shared_element_enter
+        </item>
+    </style>
+
+    <style name="PictureView">
+        <item name="android:layout_width">@dimen/activity_horizontal_margin</item>
+        <item name="android:layout_height">@dimen/activity_vertical_margin</item>
+        <item name="android:layout_gravity">fill</item>
+        <item name="android:layout_columnWeight">1</item>
+        <item name="android:layout_rowWeight">1</item>
+        <item name="android:foreground">?attr/selectableItemBackground</item>
+        <item name="android:onClick">pictureClick</item>
+        <item name="android:scaleType">centerCrop</item>
+    </style>
+
+    <style name="ShareItemView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">?android:attr/selectableItemBackgroundBorderless</item>
+        <item name="android:onClick">shareClick</item>
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Medium.Inverse</item>
+    </style>
+
+</resources>

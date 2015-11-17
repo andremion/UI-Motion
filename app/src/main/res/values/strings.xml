@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Transitions</string>
+
+    <string name="chrysanthemum">Chrysanthemum</string>
+    <string name="desert">Desert</string>
+    <string name="hydrangeas">Hydrangeas</string>
+    <string name="jellyfish">Jellyfish</string>
+    <string name="penguins">Penguins</string>
+    <string name="tulips">Tulips</string>
+
+    <string name="picture_transition_name" translatable="false">picture</string>
+    <string name="share_transition_name" translatable="false">share</string>
+
+    <string name="detail_text">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tristique tellus nulla, vel tincidunt quam tincidunt fermentum. Integer semper efficitur dignissim. Pellentesque in leo sit amet urna vehicula tempor. Vivamus convallis finibus neque id egestas. Donec ultricies at tortor sed egestas. Donec justo arcu, convallis sed rutrum a, suscipit ut nisi. Morbi gravida odio at semper porta. Sed pretium, lacus at eleifend tempus, libero nibh gravida nibh, eu tempus augue nunc sit amet diam. Phasellus turpis justo, vehicula et tempus quis, rhoncus a dui. Nunc tincidunt diam arcu, a placerat dui efficitur id. Sed ullamcorper nisl sit amet nisl iaculis efficitur. Fusce ultrices dui magna, eu scelerisque mi aliquet a. Suspendisse potenti. Cras rutrum sagittis lectus ac gravida.\n\nInteger fringilla purus quis tortor tincidunt viverra. Ut in ultricies tortor, nec fringilla dolor. Morbi et consectetur augue, vel iaculis lorem. Cras porttitor libero nec ligula suscipit cursus. Etiam convallis viverra iaculis. Duis a nisi eget ligula ornare feugiat quis vitae mauris. Nunc nec mauris id turpis luctus posuere. In hac habitasse platea dictumst. Nulla tempus luctus tellus vitae iaculis. Sed felis est, varius eget egestas a, dignissim pharetra arcu. Quisque hendrerit faucibus purus vitae finibus. Fusce facilisis blandit nisi, vitae facilisis massa eleifend vel. Donec vitae venenatis lorem. Nullam eu pharetra est. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse at risus et quam bibendum pellentesque.
+    </string>
+
+    <string name="dialog_sharing_title">Share to:</string>
+    <string name="share_facebook">Facebook</string>
+    <string name="share_twitter">Twitter</string>
+    <string name="share_google_plus">Google+</string>
+    <string name="share_instagram">Instagram</string>
+
+</resources>

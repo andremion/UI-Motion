@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/share_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:src="@drawable/ic_share_white_24dp"
+        android:transitionName="@string/share_transition_name"
+        app:fabSize="normal"/>
+
+    <FrameLayout
+        android:id="@+id/content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@drawable/sharing_bg"
+        android:elevation="@dimen/design_fab_elevation"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingEnd="@dimen/activity_horizontal_margin"
+        android:paddingStart="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin">
+
+        <ImageView
+            android:id="@+id/placeholder"
+            android:layout_width="@dimen/design_fab_size_normal"
+            android:layout_height="@dimen/design_fab_size_normal"
+            android:layout_gravity="center"
+            android:contentDescription="@null"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_share_white_24dp"/>
+
+        <TextView
+            style="@style/ShareItemView"
+            android:layout_gravity="center_horizontal"
+            android:drawableTop="@drawable/ic_facebook"
+            android:text="@string/share_facebook"/>
+
+        <TextView
+            style="@style/ShareItemView"
+            android:layout_gravity="center_vertical"
+            android:drawableTop="@drawable/ic_twitter"
+            android:text="@string/share_twitter"/>
+
+        <TextView
+            style="@style/ShareItemView"
+            android:layout_gravity="end|center_vertical"
+            android:drawableTop="@drawable/ic_instagram"
+            android:text="@string/share_google_plus"/>
+
+        <TextView
+            style="@style/ShareItemView"
+            android:layout_gravity="bottom|center_horizontal"
+            android:drawableTop="@drawable/ic_instagram"
+            android:text="@string/share_instagram"/>
+
+    </FrameLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:text="@string/dialog_sharing_title"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title.Inverse"/>
+
+</RelativeLayout>

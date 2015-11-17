@@ -1,0 +1,45 @@
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <GridLayout
+        android:id="@+id/pictures"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:columnCount="3"
+        android:padding="@dimen/grid_padding"
+        android:useDefaultMargins="true">
+
+        <com.example.andremion.transitions.PictureView
+            style="@style/PictureView"
+            android:contentDescription="@string/chrysanthemum"
+            android:src="@drawable/chrysanthemum"/>
+
+        <com.example.andremion.transitions.PictureView
+            style="@style/PictureView"
+            android:contentDescription="@string/desert"
+            android:src="@drawable/desert"/>
+
+        <com.example.andremion.transitions.PictureView
+            style="@style/PictureView"
+            android:contentDescription="@string/hydrangeas"
+            android:src="@drawable/hydrangeas"/>
+
+        <com.example.andremion.transitions.PictureView
+            style="@style/PictureView"
+            android:layout_columnSpan="2"
+            android:contentDescription="@string/jellyfish"
+            android:src="@drawable/jellyfish"/>
+
+        <com.example.andremion.transitions.PictureView
+            style="@style/PictureView"
+            android:contentDescription="@string/penguins"
+            android:src="@drawable/penguins"/>
+
+        <com.example.andremion.transitions.PictureView
+            style="@style/PictureView"
+            android:layout_columnSpan="3"
+            android:contentDescription="@string/tulips"
+            android:src="@drawable/tulips"/>
+
+    </GridLayout>
+
+</merge>
