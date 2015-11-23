@@ -1,4 +1,4 @@
-package com.example.andremion.transitions;
+package com.example.andremion.uimotion;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -18,7 +18,6 @@ public class SharingActivity extends AppCompatActivity {
 
     private View mShareButton;
     private ViewGroup mContentView;
-    private View mPlaceholder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +28,6 @@ public class SharingActivity extends AppCompatActivity {
         mShareButton.setClickable(false);
         mContentView = (ViewGroup) findViewById(R.id.content);
         mContentView.setVisibility(View.INVISIBLE);
-        mPlaceholder = findViewById(R.id.placeholder);
 
         getWindow().getSharedElementEnterTransition().addListener(new TransitionAdapter() {
             @Override

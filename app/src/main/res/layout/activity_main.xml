@@ -8,33 +8,33 @@
         android:padding="@dimen/grid_padding"
         android:useDefaultMargins="true">
 
-        <com.example.andremion.transitions.PictureView
+        <com.example.andremion.uimotion.PictureView
             style="@style/PictureView"
             android:contentDescription="@string/chrysanthemum"
             android:src="@drawable/chrysanthemum"/>
 
-        <com.example.andremion.transitions.PictureView
+        <com.example.andremion.uimotion.PictureView
             style="@style/PictureView"
             android:contentDescription="@string/desert"
             android:src="@drawable/desert"/>
 
-        <com.example.andremion.transitions.PictureView
+        <com.example.andremion.uimotion.PictureView
             style="@style/PictureView"
             android:contentDescription="@string/hydrangeas"
             android:src="@drawable/hydrangeas"/>
 
-        <com.example.andremion.transitions.PictureView
+        <com.example.andremion.uimotion.PictureView
             style="@style/PictureView"
             android:layout_columnSpan="2"
             android:contentDescription="@string/jellyfish"
             android:src="@drawable/jellyfish"/>
 
-        <com.example.andremion.transitions.PictureView
+        <com.example.andremion.uimotion.PictureView
             style="@style/PictureView"
             android:contentDescription="@string/penguins"
             android:src="@drawable/penguins"/>
 
-        <com.example.andremion.transitions.PictureView
+        <com.example.andremion.uimotion.PictureView
             style="@style/PictureView"
             android:layout_columnSpan="3"
             android:contentDescription="@string/tulips"

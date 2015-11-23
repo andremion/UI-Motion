@@ -1,3 +1,3 @@
-# UI-Transitions
+# UI-Motion
 
-![Preview](https://github.com/andremion/UI-Transitions/raw/master/assets/preview.gif)
+![Preview](https://github.com/andremion/UI-Motion/raw/master/assets/preview.gif)

@@ -76,6 +76,6 @@
         app:fabSize="normal"
         app:layout_anchor="@id/appbar"
         app:layout_anchorGravity="bottom|end"
-        app:layout_behavior="com.example.andremion.transitions.DetailActivity$CustomFloatingActionButtonBehavior"/>
+        app:layout_behavior="com.example.andremion.uimotion.DetailActivity$CustomFloatingActionButtonBehavior"/>
 
 </android.support.design.widget.CoordinatorLayout>

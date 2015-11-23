@@ -1,4 +1,4 @@
-package com.example.andremion.transitions;
+package com.example.andremion.uimotion;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
