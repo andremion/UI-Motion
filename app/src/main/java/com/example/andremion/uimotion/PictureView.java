@@ -10,19 +10,15 @@ public class PictureView extends ImageView {
     private int mResId;
 
     public PictureView(Context context) {
-        this(context, null, 0, 0);
+        this(context, null, 0);
     }
 
     public PictureView(Context context, @Nullable AttributeSet attrs) {
-        this(context, attrs, 0, 0);
+        this(context, attrs, 0);
     }
 
     public PictureView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
-        this(context, attrs, defStyleAttr, 0);
-    }
-
-    public PictureView(Context context, @Nullable AttributeSet attrs, int defStyleAttr, int defStyleRes) {
-        super(context, attrs, defStyleAttr, defStyleRes);
+        super(context, attrs, defStyleAttr);
         if (attrs != null) {
             final String namespace = "http://schemas.android.com/apk/res/android";
             final String attribute = "src";
