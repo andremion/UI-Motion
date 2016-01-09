@@ -1,45 +1,44 @@
-<merge xmlns:android="http://schemas.android.com/apk/res/android">
+<android.support.v7.widget.GridLayout
+    android:id="@+id/pictures"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/grid_padding"
+    app:columnCount="3"
+    app:rowCount="3"
+    app:useDefaultMargins="true">
 
-    <GridLayout
-        android:id="@+id/pictures"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:columnCount="3"
-        android:padding="@dimen/grid_padding"
-        android:useDefaultMargins="true">
+    <com.example.andremion.uimotion.PictureView
+        style="@style/PictureView"
+        android:contentDescription="@string/chrysanthemum"
+        android:src="@drawable/chrysanthemum"/>
 
-        <com.example.andremion.uimotion.PictureView
-            style="@style/PictureView"
-            android:contentDescription="@string/chrysanthemum"
-            android:src="@drawable/chrysanthemum"/>
+    <com.example.andremion.uimotion.PictureView
+        style="@style/PictureView"
+        android:contentDescription="@string/desert"
+        android:src="@drawable/desert"/>
 
-        <com.example.andremion.uimotion.PictureView
-            style="@style/PictureView"
-            android:contentDescription="@string/desert"
-            android:src="@drawable/desert"/>
+    <com.example.andremion.uimotion.PictureView
+        style="@style/PictureView"
+        android:contentDescription="@string/hydrangeas"
+        android:src="@drawable/hydrangeas"/>
 
-        <com.example.andremion.uimotion.PictureView
-            style="@style/PictureView"
-            android:contentDescription="@string/hydrangeas"
-            android:src="@drawable/hydrangeas"/>
+    <com.example.andremion.uimotion.PictureView
+        style="@style/PictureView"
+        android:contentDescription="@string/jellyfish"
+        android:src="@drawable/jellyfish"
+        app:layout_columnSpan="2"/>
 
-        <com.example.andremion.uimotion.PictureView
-            style="@style/PictureView"
-            android:layout_columnSpan="2"
-            android:contentDescription="@string/jellyfish"
-            android:src="@drawable/jellyfish"/>
+    <com.example.andremion.uimotion.PictureView
+        style="@style/PictureView"
+        android:contentDescription="@string/penguins"
+        android:src="@drawable/penguins"/>
 
-        <com.example.andremion.uimotion.PictureView
-            style="@style/PictureView"
-            android:contentDescription="@string/penguins"
-            android:src="@drawable/penguins"/>
+    <com.example.andremion.uimotion.PictureView
+        style="@style/PictureView"
+        android:contentDescription="@string/tulips"
+        android:src="@drawable/tulips"
+        app:layout_columnSpan="3"/>
 
-        <com.example.andremion.uimotion.PictureView
-            style="@style/PictureView"
-            android:layout_columnSpan="3"
-            android:contentDescription="@string/tulips"
-            android:src="@drawable/tulips"/>
-
-    </GridLayout>
-
-</merge>
+</android.support.v7.widget.GridLayout>

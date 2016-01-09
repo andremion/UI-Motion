@@ -28,11 +28,11 @@
     </style>
 
     <style name="PictureView">
-        <item name="android:layout_width">@dimen/activity_horizontal_margin</item>
-        <item name="android:layout_height">@dimen/activity_vertical_margin</item>
-        <item name="android:layout_gravity">fill</item>
-        <item name="android:layout_columnWeight">1</item>
-        <item name="android:layout_rowWeight">1</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="layout_gravity">fill</item>
+        <item name="layout_columnWeight">1</item>
+        <item name="layout_rowWeight">1</item>
         <item name="android:foreground">?attr/selectableItemBackground</item>
         <item name="android:onClick">pictureClick</item>
         <item name="android:scaleType">centerCrop</item>
