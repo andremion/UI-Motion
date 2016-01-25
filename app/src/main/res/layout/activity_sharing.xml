@@ -11,10 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:layout_marginBottom="@dimen/activity_vertical_margin"
-        android:layout_marginEnd="@dimen/activity_horizontal_margin"
-        android:layout_marginStart="@dimen/activity_horizontal_margin"
-        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_margin="@dimen/activity_vertical_margin"
         android:src="@drawable/ic_share_white_24dp"
         android:transitionName="@string/share_transition_name"
         app:fabSize="normal"/>

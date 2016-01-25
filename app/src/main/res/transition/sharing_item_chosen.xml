@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<transitionSet xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--1. Item chosen-->
+    <changeBounds/>
+    <!--2. Rest of items-->
+    <fade>
+        <targets>
+            <target android:excludeId="@id/content_root"/>
+        </targets>
+    </fade>
+    <!--3. Background-->
+    <changeImageTransform android:startDelay="@integer/default_anim_duration"/>
+</transitionSet>

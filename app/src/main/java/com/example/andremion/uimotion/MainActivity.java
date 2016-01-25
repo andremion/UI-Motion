@@ -15,12 +15,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void pictureClick(View view) {
-        //noinspection unchecked
+        // Create an object containing information about our scene transition animation
         ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(this,
                 view, getString(R.string.picture_transition_name));
         PictureView pictureView = (PictureView) view;
         int picture = pictureView.getImageResource();
         CharSequence title = view.getContentDescription();
+        // Pass information to Detail Activity in order to show the chosen image and its details
         Intent intent = new Intent(this, DetailActivity.class);
         intent.putExtra(DetailActivity.EXTRA_PICTURE, picture);
         intent.putExtra(DetailActivity.EXTRA_TITLE, title);

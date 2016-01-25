@@ -40,15 +40,18 @@ public class DetailActivity extends AppCompatActivity {
         pictureView.setContentDescription(title);
 
         mShareButton = findViewById(R.id.share_button);
-        mShareButton.setScaleX(0);
-        mShareButton.setScaleY(0);
-        getWindow().getEnterTransition().addListener(new TransitionAdapter() {
-            @Override
-            public void onTransitionEnd(Transition transition) {
-                getWindow().getEnterTransition().removeListener(this);
-                mShareButton.animate().scaleX(1).scaleY(1);
-            }
-        });
+
+        if (savedInstanceState == null) {
+            mShareButton.setScaleX(0);
+            mShareButton.setScaleY(0);
+            getWindow().getEnterTransition().addListener(new TransitionAdapter() {
+                @Override
+                public void onTransitionEnd(Transition transition) {
+                    getWindow().getEnterTransition().removeListener(this);
+                    mShareButton.animate().scaleX(1).scaleY(1);
+                }
+            });
+        }
     }
 
     @Override

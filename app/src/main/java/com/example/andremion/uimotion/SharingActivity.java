@@ -5,12 +5,9 @@ import android.animation.AnimatorListenerAdapter;
 import android.graphics.Matrix;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.transition.ChangeBounds;
-import android.transition.ChangeImageTransform;
-import android.transition.Fade;
 import android.transition.Transition;
+import android.transition.TransitionInflater;
 import android.transition.TransitionManager;
-import android.transition.TransitionSet;
 import android.view.View;
 import android.view.ViewAnimationUtils;
 import android.view.ViewGroup;
@@ -21,7 +18,7 @@ import android.widget.RelativeLayout;
 
 public class SharingActivity extends AppCompatActivity {
 
-    private int mDefaultDurationAnim;
+    private int mDefaultAnimDuration;
 
     private ViewGroup mRootView;
     private ImageView mBackgroundView;
@@ -32,12 +29,7 @@ public class SharingActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sharing);
 
-        mDefaultDurationAnim = getResources().getInteger(android.R.integer.config_mediumAnimTime);
-
-        // This is just a place holder
-        View shareButton = findViewById(R.id.share_button);
-        // Disable it clicks
-        shareButton.setClickable(false);
+        mDefaultAnimDuration = getResources().getInteger(R.integer.default_anim_duration);
 
         // Find view references
         mRootView = (ViewGroup) findViewById(R.id.content_root);
@@ -83,7 +75,7 @@ public class SharingActivity extends AppCompatActivity {
      */
     private void hideTheBackground() {
         Animator hide = createRevealAnimator(false);
-        hide.setStartDelay(mDefaultDurationAnim);
+        hide.setStartDelay(mDefaultAnimDuration);
         hide.addListener(new AnimatorListenerAdapter() {
             @Override
             public void onAnimationEnd(Animator animation) {
@@ -100,7 +92,7 @@ public class SharingActivity extends AppCompatActivity {
     private void showTheItems() {
         for (int i = 0; i < mItemViews.length; i++) {
             View itemView = mItemViews[i];
-            long startDelay = (mDefaultDurationAnim / mItemViews.length) * (i + 1);
+            long startDelay = (mDefaultAnimDuration / mItemViews.length) * (i + 1);
             itemView.animate().alpha(1).setStartDelay(startDelay);
         }
     }
@@ -111,7 +103,7 @@ public class SharingActivity extends AppCompatActivity {
     private void hideTheItems() {
         for (int i = 0; i < mItemViews.length; i++) {
             View itemView = mItemViews[i];
-            long startDelay = (mDefaultDurationAnim / mItemViews.length) * (mItemViews.length - i);
+            long startDelay = (mDefaultAnimDuration / mItemViews.length) * (mItemViews.length - i);
             itemView.animate().alpha(0).setStartDelay(startDelay);
         }
     }
@@ -128,42 +120,45 @@ public class SharingActivity extends AppCompatActivity {
             animator.setInterpolator(new DecelerateInterpolator());
         } else {
             animator = ViewAnimationUtils.createCircularReveal(mBackgroundView, cx, cy, radius, 0);
-//            animator.setInterpolator(new DecelerateInterpolator());
             animator.setInterpolator(new AccelerateInterpolator());
         }
-        animator.setDuration(mDefaultDurationAnim);
+        animator.setDuration(mDefaultAnimDuration);
         return animator;
     }
 
     public void shareClick(View view) {
 
-        TransitionSet transition = new TransitionSet();
-        transition.addTransition(new Fade(Fade.OUT).excludeTarget(R.id.content_root, true));
-        transition.addTransition(new ChangeBounds());
-        transition.addTransition(new ChangeImageTransform().setStartDelay(mDefaultDurationAnim));
-        transition.addTransition(new Fade(Fade.OUT).addTarget(R.id.content_root).setStartDelay(mDefaultDurationAnim * 2));
+        // Load the transition
+        Transition transition = TransitionInflater.from(this).inflateTransition(R.transition.sharing_item_chosen);
+        // Finish this Activity when the transition is ended
         transition.addListener(new TransitionAdapter() {
             @Override
             public void onTransitionEnd(Transition transition) {
+                // Finish the activity
                 finish();
+                // Override default transition to fade out
+                overridePendingTransition(0, android.R.anim.fade_out);
             }
         });
+        // Capture current values in the scene root and then post a request to run a transition on the next frame
         TransitionManager.beginDelayedTransition(mRootView, transition);
 
-        // Item chosen
+        // Change view property values
+
+        // 1. Item chosen
         RelativeLayout.LayoutParams layoutParams =
                 new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
         layoutParams.addRule(RelativeLayout.CENTER_IN_PARENT);
         view.setLayoutParams(layoutParams);
 
-        // Rest of items
+        // 2. Rest of items
         for (View itemView : mItemViews) {
             if (itemView != view) {
                 itemView.setVisibility(View.INVISIBLE);
             }
         }
 
-        // Background
+        // 3. Background
         double diagonal = Math.sqrt(mRootView.getHeight() * mRootView.getHeight() + mRootView.getWidth() * mRootView.getWidth());
         float radius = (float) (diagonal / 2f);
         int h = mBackgroundView.getDrawable().getIntrinsicHeight();
@@ -172,9 +167,6 @@ public class SharingActivity extends AppCompatActivity {
         matrix.postScale(scale, scale, mBackgroundView.getWidth() / 2f, mBackgroundView.getHeight() / 2f);
         mBackgroundView.setScaleType(ImageView.ScaleType.MATRIX);
         mBackgroundView.setImageMatrix(matrix);
-
-        // Root
-        mRootView.setVisibility(View.INVISIBLE);
     }
 
 }
