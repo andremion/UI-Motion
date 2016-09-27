@@ -1,3 +1,5 @@
+[![#AndroidDev Digest #110](https://img.shields.io/badge/AndroidDev%20Digest-%23110-blue.svg)](https://www.androiddevdigest.com/digest-110/)
+
 # Applying meaningful motion on Android
 
 ![Preview](https://github.com/andremion/UI-Motion/raw/master/assets/preview.gif)
